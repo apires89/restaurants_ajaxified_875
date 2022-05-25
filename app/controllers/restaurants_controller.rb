@@ -1,0 +1,11 @@
+# app/controllers/restaurants_controller.rb
+class RestaurantsController < ApplicationController
+  def index
+    @restaurants = Restaurant.all
+  end
+
+  def show
+    @restaurant = Restaurant.find(params[:id])
+    @review = Review.new  # <-- You need this now.
+  end
+end
